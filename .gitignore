@@ -1,0 +1,11 @@
+# Originais na raiz (já copiados para assets/ com nomes web-friendly)
+/fotos/
+/musicas/
+
+# Configurações locais do Claude Code
+.claude/settings.local.json
+
+# SO / editor
+Thumbs.db
+.DS_Store
+desktop.ini
