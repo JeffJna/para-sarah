@@ -9,6 +9,9 @@
   let tentativas = 0;
   let liberado = false;
 
+  /* caractere que aparece no lugar do dígito (mais secreto 🤫) */
+  const MASK = "•";
+
   /* corações flutuando no fundo */
   const heartsBox = document.querySelector(".lock-hearts");
   for (let i = 0; i < 18; i++) {
@@ -24,9 +27,17 @@
   /* navegação entre os dígitos */
   pins.forEach((pin, i) => {
     pin.addEventListener("input", () => {
-      pin.value = pin.value.replace(/\D/g, "").slice(-1);
-      if (pin.value && i < pins.length - 1) pins[i + 1].focus();
-      if (pins.every((p) => p.value)) verificar();
+      // guarda o dígito de verdade escondido e mostra só a máscara
+      const dig = pin.value.replace(/\D/g, "").slice(-1);
+      if (dig) {
+        pin.dataset.real = dig;
+        pin.value = MASK;
+        if (i < pins.length - 1) pins[i + 1].focus();
+      } else {
+        pin.dataset.real = "";
+        pin.value = "";
+      }
+      if (pins.every((p) => p.dataset.real)) verificar();
     });
     pin.addEventListener("keydown", (e) => {
       if (e.key === "Backspace" && !pin.value && i > 0) pins[i - 1].focus();
@@ -34,19 +45,25 @@
     pin.addEventListener("paste", (e) => {
       e.preventDefault();
       const dig = (e.clipboardData.getData("text").match(/\d/g) || []).slice(0, 4);
-      dig.forEach((d, j) => (pins[j].value = d));
+      dig.forEach((d, j) => {
+        pins[j].dataset.real = d;
+        pins[j].value = MASK;
+      });
       if (dig.length === 4) verificar();
     });
   });
 
   function verificar() {
-    const codigo = pins.map((p) => p.value).join("");
+    const codigo = pins.map((p) => p.dataset.real || "").join("");
     if (codigo === CONFIG.senha) desbloquear();
     else {
       tentativas++;
       icon.classList.add("shake");
       setTimeout(() => icon.classList.remove("shake"), 600);
-      pins.forEach((p) => (p.value = ""));
+      pins.forEach((p) => {
+        p.value = "";
+        p.dataset.real = "";
+      });
       pins[0].focus();
       if (tentativas >= 2) {
         hint.textContent = CONFIG.dicaSenha;
@@ -62,11 +79,14 @@
     pins.forEach((p) => (p.disabled = true));
 
     setTimeout(() => {
-      site.hidden = false;
-      window.scrollTo(0, 0);
-      document.body.style.overflowX = "hidden";
-      Player.start();          // o clique dela libera o autoplay 🎵
-      window.initScrollAnimations();
+      // tela de escolha da música; o site só aparece depois que ela escolhe
+      Intro.show((faixa) => {
+        site.hidden = false;
+        window.scrollTo(0, 0);
+        document.body.style.overflowX = "hidden";
+        Player.start(faixa);   // o clique dela na música libera o autoplay 🎵
+        window.initScrollAnimations();
+      });
       screen.classList.add("open");
       setTimeout(() => screen.remove(), 1400);
     }, 900);
