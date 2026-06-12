@@ -10,7 +10,7 @@ const CONFIG = {
   ele: "Jefferson",
 
   // ----- Data em que tudo começou (ano, mês 1-12, dia) -----
-  inicioRelacionamento: new Date(2017, 6, 30), // 30/07/2017
+  inicioRelacionamento: new Date(2017, 6, 23), // 23/07/2017
 
   // ----- Senha do cadeado (a "chave do coração") -----
   senha: "0919",
@@ -93,7 +93,7 @@ const CONFIG = {
   quiz: [
     {
       pergunta: "Quando começou a nossa história?",
-      opcoes: ["14/02/2017", "30/07/2017", "12/06/2018", "30/07/2016"],
+      opcoes: ["14/02/2017", "23/07/2017", "12/06/2018", "23/07/2016"],
       correta: 1,
     },
     {
