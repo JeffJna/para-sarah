@@ -6,7 +6,7 @@ Um presente de Dia dos Namorados feito com código e amor por **Jefferson Almeid
 
 ## O que é
 
-Uma jornada cinematográfica pela nossa história: tela de cadeado com a chave do nosso coração, contador ao vivo desde **30/07/2017**, capítulos com 75 fotos, trilha sonora, quiz e uma carta no final.
+Uma jornada cinematográfica pela nossa história: tela de cadeado com a chave do nosso coração, contador ao vivo desde **23/07/2017**, capítulos com 75 fotos, trilha sonora, quiz e uma carta no final.
 
 ## Como personalizar
 
