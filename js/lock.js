@@ -10,7 +10,7 @@
   let liberado = false;
 
   /* caractere que aparece no lugar do dígito (mais secreto 🤫) */
-  const MASK = "*";
+  const MASK = "•";
 
   /* corações flutuando no fundo */
   const heartsBox = document.querySelector(".lock-hearts");
@@ -79,11 +79,14 @@
     pins.forEach((p) => (p.disabled = true));
 
     setTimeout(() => {
-      site.hidden = false;
-      window.scrollTo(0, 0);
-      document.body.style.overflowX = "hidden";
-      Player.start();          // o clique dela libera o autoplay 🎵
-      window.initScrollAnimations();
+      // tela de escolha da música; o site só aparece depois que ela escolhe
+      Intro.show((faixa) => {
+        site.hidden = false;
+        window.scrollTo(0, 0);
+        document.body.style.overflowX = "hidden";
+        Player.start(faixa);   // o clique dela na música libera o autoplay 🎵
+        window.initScrollAnimations();
+      });
       screen.classList.add("open");
       setTimeout(() => screen.remove(), 1400);
     }, 900);

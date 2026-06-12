@@ -23,6 +23,10 @@ const CONFIG = {
     { titulo: "Amei Te Ver", artista: "Tiago Iorc", arquivo: "assets/musicas/amei-te-ver.mp3" },
     { titulo: "Ainda Bem", artista: "Marisa Monte", arquivo: "assets/musicas/ainda-bem.mp3" },
     { titulo: "Velha Infância", artista: "Tribalistas", arquivo: "assets/musicas/velha-infancia.mp3" },
+    { titulo: "Ela Une Todas as Coisas", artista: "Jorge Vercillo", arquivo: "assets/musicas/ela-une-todas-as-coisas.mp3" },
+    { titulo: "Final Feliz", artista: "Jorge Vercillo", arquivo: "assets/musicas/final-feliz.mp3" },
+    { titulo: "Monalisa", artista: "Jorge Vercillo", arquivo: "assets/musicas/monalisa.mp3" },
+    { titulo: "Que Nem Maré", artista: "Jorge Vercillo", arquivo: "assets/musicas/que-nem-mare.mp3" },
   ],
 
   // ----- Capítulos da nossa história -----
@@ -93,9 +97,9 @@ const CONFIG = {
       correta: 1,
     },
     {
-      pergunta: "Qual dessas músicas está na trilha sonora deste site?",
-      opcoes: ["Evidências", "Meu Abrigo – Melim", "Fico Assim Sem Você", "Anunciação"],
-      correta: 1,
+      pergunta: "Qual dessas músicas está na trilha sonora da nossa vida?",
+      opcoes: ["Evidências", "Meu Abrigo – Melim", "Fico Assim Sem Você", "Jorge Vercillo - Ela Une Todas As Coisas"],
+      correta: 3,
     },
     {
       // ⚠️ EDITAR: coloque o lugar verdadeiro!

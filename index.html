@@ -15,7 +15,7 @@
     href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Dancing+Script:wght@500;700&family=Montserrat:wght@300;400;500;600&display=swap"
     rel="stylesheet"
   />
-  <link rel="stylesheet" href="css/style.css?v=2" />
+  <link rel="stylesheet" href="css/style.css?v=7" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>❤️</text></svg>" />
 </head>
 <body>
@@ -40,6 +40,18 @@
         <input type="tel" maxlength="1" class="pin" inputmode="numeric" autocomplete="off" aria-label="dígito 4" />
       </div>
       <p class="lock-hint" id="lock-hint"></p>
+    </div>
+  </div>
+
+  <!-- ════════ 🎵 ESCOLHA DA MÚSICA (antes de rolar) ════════ -->
+  <div id="song-intro" hidden>
+    <div class="lock-hearts" aria-hidden="true"></div>
+    <div class="intro-content">
+      <p class="intro-pre">Antes de começarmos…</p>
+      <h1 class="intro-title">Escolha a música que vai<br />embalar a nossa história</h1>
+      <p class="intro-sub">Toque em uma — as outras seguem tocando depois. Você pode trocar quando quiser no player 🎵</p>
+      <ul class="intro-list" id="song-intro-list"></ul>
+      <button class="intro-skip" id="intro-skip">Deixar tocar do começo ❤</button>
     </div>
   </div>
 
@@ -115,6 +127,14 @@
 
   <!-- 🎵 PLAYER FLUTUANTE -->
   <div id="player" hidden>
+    <!-- 🎶 Lista para ela escolher a música -->
+    <div class="pl-queue" id="pl-queue" hidden>
+      <div class="pl-queue-head">
+        <span>Escolha a nossa música 🎶</span>
+        <button id="pl-queue-close" aria-label="Fechar lista">✕</button>
+      </div>
+      <ul class="pl-queue-list" id="pl-queue-list"></ul>
+    </div>
     <img class="pl-cover" id="pl-cover" src="assets/fotos/foto-01.jpeg" alt="" />
     <div class="pl-info">
       <div class="pl-title" id="pl-title">—</div>
@@ -122,6 +142,7 @@
       <div class="pl-bar"><div class="pl-progress" id="pl-progress"></div></div>
     </div>
     <div class="pl-controls">
+      <button id="pl-list" aria-label="Lista de músicas">☰</button>
       <button id="pl-prev" aria-label="Anterior">⏮</button>
       <button id="pl-play" aria-label="Tocar ou pausar">⏸</button>
       <button id="pl-next" aria-label="Próxima">⏭</button>
@@ -140,12 +161,13 @@
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
 
-  <script src="js/config.js?v=2"></script>
-  <script src="js/player.js?v=2"></script>
-  <script src="js/counter.js?v=2"></script>
-  <script src="js/scroll.js?v=2"></script>
-  <script src="js/quiz.js?v=2"></script>
-  <script src="js/letter.js?v=2"></script>
-  <script src="js/lock.js?v=2"></script>
+  <script src="js/config.js?v=7"></script>
+  <script src="js/player.js?v=7"></script>
+  <script src="js/counter.js?v=7"></script>
+  <script src="js/scroll.js?v=7"></script>
+  <script src="js/quiz.js?v=7"></script>
+  <script src="js/letter.js?v=7"></script>
+  <script src="js/intro.js?v=7"></script>
+  <script src="js/lock.js?v=7"></script>
 </body>
 </html>
