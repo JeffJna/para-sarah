@@ -37,7 +37,7 @@ const CONFIG = {
     numero: "Capítulo I",
     titulo: "Onde Tudo Começou",
     texto:
-      "No dia 30 de julho de 2017, sem saber, eu vivi um dos dias mais importantes da minha vida. " +
+      "No dia 23 de julho de 2017, sem saber, eu vivi um dos dias mais importantes da minha vida. " +
       "Foi ali que Deus, o destino e o amor começaram a escrever a nossa história. " +
       "Eu ainda não imaginava tudo que viveríamos, mas hoje eu sei: naquele dia eu encontrei você.",
     fotos: [1, 2, 3, 4],
@@ -133,7 +133,7 @@ const CONFIG = {
   "Mas eu queria fazer algo que tivesse um pedacinho da nossa história, " +
   "porque tudo que vivemos até aqui merece ser lembrado com carinho.\n\n" +
 
-  "Desde o dia 30 de julho de 2017, minha vida começou a ganhar novas cores. " +
+  "Desde o dia 23 de julho de 2017, minha vida começou a ganhar novas cores. " +
   "Você chegou de um jeito especial e, pouco a pouco, foi se tornando meu lugar favorito no mundo. " +
   "Com você, eu aprendi que amor de verdade não está só nos grandes momentos, " +
   "mas também nos detalhes: no cuidado, na parceria, nas risadas, nos abraços e até nos silêncios tranquilos.\n\n" +
